@@ -21,6 +21,27 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
 "use strict";
 
+var _get = function get(object, property, receiver) {
+    if (object === null) object = Function.prototype;
+    var desc = Object.getOwnPropertyDescriptor(object, property);
+    if (desc === undefined) {
+        var parent = Object.getPrototypeOf(object);
+        if (parent === null) {
+            return undefined;
+        } else {
+            return get(parent, property, receiver);
+        }
+    } else if ("value" in desc) {
+        return desc.value;
+    } else {
+        var getter = desc.get;
+        if (getter === undefined) {
+            return undefined;
+        }
+        return getter.call(receiver);
+    }
+};
+
 var _createClass = function() {
     function defineProperties(target, props) {
         for (var i = 0; i < props.length; i++) {
@@ -71,7 +92,6 @@ var BSObject = function() {
         _classCallCheck(this, BSObject);
         this._$elem = null;
         this._uid = "pBS-" + Date.now() + "-" + Math.ceil(Math.random() * 1e20);
-        console.log(this._uid);
     }
     _createClass(BSObject, [ {
         key: "appendTo",
@@ -264,7 +284,9 @@ var BSFormInput = function(_BSObject2) {
         _this2._$input = null;
         _this2._$label = null;
         _this2._$helpBlock = null;
-        _this2._$elem = $("<div/>", {});
+        _this2._$elem = $("<div/>", {
+            id: _this2._uid
+        });
         return _this2;
     }
     _createClass(BSFormInput, [ {
@@ -410,10 +432,27 @@ var BSCheckbox = function(_BSFormInput2) {
         key: "label",
         value: function label() {
             if (arguments.length > 0) {
+                this._$labelText.html("");
                 this._$labelText.append.apply(this._$labelText, arguments);
+                return this;
             } else {
                 return this._$labelText.html();
             }
+        }
+    }, {
+        key: "disabled",
+        value: function disabled() {
+            if (arguments.length > 0) {
+                var d = arguments[0] === true;
+                _get(Object.getPrototypeOf(BSCheckbox.prototype), "disabled", this).call(this, d);
+                if (d) {
+                    this._$elem.addClass("disabled");
+                } else {
+                    this._$elem.removeClass("disabled");
+                }
+                return this;
+            }
+            return _get(Object.getPrototypeOf(BSCheckbox.prototype), "disabled", this).call(this);
         }
     } ]);
     return BSCheckbox;

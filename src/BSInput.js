@@ -1,6 +1,8 @@
 
 /**
 * Representation of a &lt;input&gt; element
+*
+* @extends BSObject
 * @extends BSFormInput
 */
 class BSInput extends BSFormInput{

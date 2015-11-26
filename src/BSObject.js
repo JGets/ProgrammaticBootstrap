@@ -7,8 +7,9 @@
 class BSObject{
 	constructor(){
 		this._$elem = null;
+
+		//create a unique ID for this object
 		this._uid = "pBS-"+Date.now()+"-"+Math.ceil(Math.random()*99999999999999999999);
-		console.log(this._uid);
 	}
 
 	/**

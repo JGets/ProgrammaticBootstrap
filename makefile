@@ -29,11 +29,9 @@ test: build
 
 # Release:
 #	* copies our final build file from the build/ directory
-#	* cleans the build/ directory
 #	* creates a minified & obfuscated version
 release: docs build test
 	@cp build/${FINALNAME}.js release/
-	-@rm build/* 2>/dev/null || true
 	@uglifyjs --comments all --compress --mangle --output release/${FINALNAME}.min.js -- release/${FINALNAME}.js
 
 clean:

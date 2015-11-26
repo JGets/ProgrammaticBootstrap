@@ -17,31 +17,9 @@ class BSFormInput extends BSObject{
 		this._$label = null;
 		this._$helpBlock = null;
 
-		// const typeRegexp = /(text|password|datetime|datetime-local|date|month|time|week|number|email|url|search|tel|color)/;
-		// if(!typeRegexp.test(type)){
-		// 	type = "text";
-		// }
-		// this._type = type;
-
 		this._$elem = $("<div/>", {
-			// 'class' : 'form-group'
+			id : this._uid
 		});
-
-		// this._$input = $("<input/>", {
-		// 	id : this._uid+"-input",
-		// 	type : this._type,
-		// 	'class' : "form-control"
-		// });
-
-		// this._$label = $("<label/>", {
-		// 	id : this._uid+"-label",
-		// 	'for' : this._uid+"-input"
-		// });
-
-		// this._$elem.append(
-		// 	this._$label,
-		// 	this._$input
-		// );
 	}
 
 	/**
@@ -128,6 +106,19 @@ class BSFormInput extends BSObject{
 			return this;
 		}
 		return this._$input.prop("required");
+	}
+
+	/**
+	* Sets/gets whether this input is readonly. 
+	* @param {boolean} [required] - Indicates whether the input should be set readonly
+	* @returns {(boolean|BSFormInput)} If params passed, this input is returned. If no params passed, the current readonly state is returned.
+	*/ 
+	readonly(){
+		if(arguments.length > 0){
+			this._$input.prop("readonly", arguments[0]);
+			return this;
+		}
+		return this._$input.prop("readonly");
 	}
 
 	/**
