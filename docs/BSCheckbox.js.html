@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: BSInput.js</title>
+    <title>JSDoc: Source: BSCheckbox.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: BSInput.js</h1>
+    <h1 class="page-title">Source: BSCheckbox.js</h1>
 
     
 
@@ -28,31 +28,37 @@
         <article>
             <pre class="prettyprint source linenums"><code>
 /**
-* Representation of a &amp;lt;input&amp;gt; element
-* @extends BSFormInput
+* 
 */
-class BSInput extends BSFormInput{
-	/**
-	* Creates a new BSInput object.
-	* @param {string} [type="text"] - The input type. Acceptable values are: "text", "password", "datetime", 
-	*	"datetime-local", "date", "month", "time", "week", "number", "email", "url", "search", "tel", and "color"
-	*/
+class BSCheckbox extends BSFormInput{
 	constructor(type){
 		super();
-		this._type;
-		
-		const typeRegexp = /(text|password|datetime|datetime-local|date|month|time|week|number|email|url|search|tel|color)/;
-		if(!typeRegexp.test(type)){
-			type = "text";
-		}
-		this._type = type;
+		this._$labelText;
 
-		this._$elem.addClass("form-group");
+		const typeRegex = /(checkbox|inline|radio|radio-inline)/;
+		if(!typeRegex.test(type)){
+			type = "checkbox";
+		}
+
+		var inline = (type == "inline" || type == "radio-inline");
+		if(type == "inline"){
+			type = "checkbox";
+		}
+		else if(type == "radio-inline"){
+			type = "radio";
+		}
+
+		var classText = type;
+		if(inline){
+			classText += "-inline";
+		}
+
+		this._$elem.addClass(classText);
 
 		this._$input = $("&lt;input/>", {
 			id : this._uid+"-input",
-			type : this._type,
-			'class' : "form-control"
+			type : type,
+			// 'class' : "form-control"
 		});
 
 		this._$label = $("&lt;label/>", {
@@ -60,15 +66,22 @@ class BSInput extends BSFormInput{
 			'for' : this._uid+"-input"
 		});
 
-		this._$elem.append(
-			this._$label,
-			this._$input
-		);
+		this._$labelText = $("&lt;span/>");
+
+		this._$label.append(this._$input, this._$labelText);
+
+		this._$elem.append(this._$label);
 	}
 
-	
+	label(){
+		if(arguments.length > 0){
+			this._$labelText.append.apply(this._$labelText, arguments);
+		}
+		else{
+			return this._$labelText.html();
+		}
+	}
 }
-
 </code></pre>
         </article>
     </section>

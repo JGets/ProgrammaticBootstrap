@@ -1,4 +1,7 @@
 
+/**
+* 
+*/
 class BSCheckbox extends BSFormInput{
 	constructor(type){
 		super();
