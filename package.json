@@ -1,0 +1,10 @@
+{
+	"name": "BoostrapVC",
+	"version": "1.0.0",
+	"babel": {
+		"comments" : false,
+		"presets":[
+			"es2015"
+		]
+	}
+}
