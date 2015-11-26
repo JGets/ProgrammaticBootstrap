@@ -4,11 +4,15 @@
 FINALNAME = ProgBS
 SRCDIR = src/
 SRCFILES = 	${SRCDIR}BSObject.js \
+			${SRCDIR}BSContentObject.js \
 			${SRCDIR}BSButton.js \
 			${SRCDIR}BSFormInput.js \
 			${SRCDIR}BSInput.js \
 			${SRCDIR}BSCheckbox.js \
-			${SRCDIR}BSRadio.js
+			${SRCDIR}BSRadio.js \
+			${SRCDIR}BSSelect.js \
+			${SRCDIR}BSTextArea.js \
+			${SRCDIR}BSForm.js
 
 all: clean release
 

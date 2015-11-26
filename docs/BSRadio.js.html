@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: BSInput.js</title>
+    <title>JSDoc: Source: BSRadio.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: BSInput.js</h1>
+    <h1 class="page-title">Source: BSRadio.js</h1>
 
     
 
@@ -28,49 +28,28 @@
         <article>
             <pre class="prettyprint source linenums"><code>
 /**
-* Representation of a &amp;lt;input&amp;gt; element
+* Representation of a radio input.&lt;br/>
+* Really just syntactic sugar over BSCheckbox.
 *
 * @extends BSObject
 * @extends BSFormInput
+* @extends BSCheckbox
 */
-class BSInput extends BSFormInput{
+class BSRadio extends BSCheckbox{
 	/**
-	* Creates a new BSInput object.
-	* @param {string} [type="text"] - The input type. Acceptable values are: "text", "password", "datetime", 
-	*	"datetime-local", "date", "month", "time", "week", "number", "email", "url", "search", "tel", and "color"
+	* Creates a new Radio input
+	* @param {string} [type="radio"] - The type of radio to make. Acceptable values are "radio" and "inline".
 	*/
 	constructor(type){
-		super();
-		this._type;
-		
-		const typeRegexp = /(text|password|datetime|datetime-local|date|month|time|week|number|email|url|search|tel|color)/;
-		if(!typeRegexp.test(type)){
-			type = "text";
+		if(type == "inline"){
+			type = "radio-inline";
 		}
-		this._type = type;
-
-		this._$elem.addClass("form-group");
-
-		this._$input = $("&lt;input/>", {
-			id : this._uid+"-input",
-			type : this._type,
-			'class' : "form-control"
-		});
-
-		this._$label = $("&lt;label/>", {
-			id : this._uid+"-label",
-			'for' : this._uid+"-input"
-		});
-
-		this._$elem.append(
-			this._$label,
-			this._$input
-		);
+		else{
+			type = "radio";
+		}
+		super(type);
 	}
-
-	
 }
-
 </code></pre>
         </article>
     </section>

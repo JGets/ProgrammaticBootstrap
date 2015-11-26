@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: BSInput</title>
+    <title>JSDoc: Class: BSRadio</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: BSInput</h1>
+    <h1 class="page-title">Class: BSRadio</h1>
 
     
 
@@ -28,9 +28,10 @@
 
 <header>
     
-        <h2>BSInput</h2>
+        <h2>BSRadio</h2>
         
-            <div class="class-description">Representation of a &lt;input&gt; element</div>
+            <div class="class-description">Representation of a radio input.<br/>
+Really just syntactic sugar over BSCheckbox.</div>
         
     
 </header>
@@ -44,14 +45,14 @@
     <h2>Constructor</h2>
     
 
-    <h4 class="name" id="BSInput"><span class="type-signature"></span>new BSInput<span class="signature">(type<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="BSRadio"><span class="type-signature"></span>new BSRadio<span class="signature">(type<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    Creates a new BSInput object.
+    Creates a new Radio input
 </div>
 
 
@@ -118,13 +119,12 @@
             
                 <td class="default">
                 
-                    "text"
+                    "radio"
                 
                 </td>
             
 
-            <td class="description last">The input type. Acceptable values are: "text", "password", "datetime", 
-	"datetime-local", "date", "month", "time", "week", "number", "email", "url", "search", "tel", and "color"</td>
+            <td class="description last">The type of radio to make. Acceptable values are "radio" and "inline".</td>
         </tr>
 
     
@@ -165,7 +165,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="BSInput.js.html">BSInput.js</a>, <a href="BSInput.js.html#line8">line 8</a>
+        <a href="BSRadio.js.html">BSRadio.js</a>, <a href="BSRadio.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -204,6 +204,8 @@
         <li><a href="BSObject.html">BSObject</a></li>
     
         <li><a href="BSFormInput.html">BSFormInput</a></li>
+    
+        <li><a href="BSCheckbox.html">BSCheckbox</a></li>
     </ul>
 
 
@@ -248,7 +250,7 @@
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="BSFormInput.html#$">BSFormInput#$</a>
+        <a href="BSCheckbox.html#$">BSCheckbox#$</a>
     </li></ul></dd>
     
 
@@ -383,7 +385,7 @@
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="BSFormInput.html#appendTo">BSFormInput#appendTo</a>
+        <a href="BSCheckbox.html#appendTo">BSCheckbox#appendTo</a>
     </li></ul></dd>
     
 
@@ -539,12 +541,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="BSFormInput.html#disabled">BSFormInput#disabled</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="BSCheckbox.html#disabled">BSCheckbox#disabled</a>
+    </li></ul></dd>
     
 
     
@@ -718,12 +720,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="BSFormInput.html#helpBlock">BSFormInput#helpBlock</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="BSCheckbox.html#helpBlock">BSCheckbox#helpBlock</a>
+    </li></ul></dd>
     
 
     
@@ -898,12 +900,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="BSFormInput.html#label">BSFormInput#label</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="BSCheckbox.html#label">BSCheckbox#label</a>
+    </li></ul></dd>
     
 
     
@@ -1072,12 +1074,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="BSFormInput.html#name">BSFormInput#name</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="BSCheckbox.html#name">BSCheckbox#name</a>
+    </li></ul></dd>
     
 
     
@@ -1246,12 +1248,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="BSFormInput.html#placeholder">BSFormInput#placeholder</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="BSCheckbox.html#placeholder">BSCheckbox#placeholder</a>
+    </li></ul></dd>
     
 
     
@@ -1415,7 +1417,7 @@
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="BSFormInput.html#prependTo">BSFormInput#prependTo</a>
+        <a href="BSCheckbox.html#prependTo">BSCheckbox#prependTo</a>
     </li></ul></dd>
     
 
@@ -1571,12 +1573,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="BSFormInput.html#readonly">BSFormInput#readonly</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="BSCheckbox.html#readonly">BSCheckbox#readonly</a>
+    </li></ul></dd>
     
 
     
@@ -1744,12 +1746,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="BSFormInput.html#required">BSFormInput#required</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="BSCheckbox.html#required">BSCheckbox#required</a>
+    </li></ul></dd>
     
 
     
@@ -1908,12 +1910,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="BSFormInput.html#val">BSFormInput#val</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="BSCheckbox.html#val">BSCheckbox#val</a>
+    </li></ul></dd>
     
 
     

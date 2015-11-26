@@ -2,8 +2,9 @@
 /**
 * Button Object
 * @extends BSObject
+* @extends BSContentObject
 */
-class BSButton extends BSObject {
+class BSButton extends BSContentObject {
 	/**
 	* Creates a new button object.<br/>
 	* When a button is created, you can control the DOM element type, namely &lt;button&gt;, &lt;a&gt;, or &lt;input&gt;.<br/>

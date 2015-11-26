@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: BSInput</title>
+    <title>JSDoc: Class: BSSelect</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: BSInput</h1>
+    <h1 class="page-title">Class: BSSelect</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2>BSInput</h2>
+        <h2>BSSelect</h2>
         
-            <div class="class-description">Representation of a &lt;input&gt; element</div>
+            <div class="class-description">Representation of a &lt;select&gt; element</div>
         
     
 </header>
@@ -44,92 +44,18 @@
     <h2>Constructor</h2>
     
 
-    <h4 class="name" id="BSInput"><span class="type-signature"></span>new BSInput<span class="signature">(type<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="BSSelect"><span class="type-signature"></span>new BSSelect<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
 
 
-<div class="description">
-    Creates a new BSInput object.
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    "text"
-                
-                </td>
-            
-
-            <td class="description last">The input type. Acceptable values are: "text", "password", "datetime", 
-	"datetime-local", "date", "month", "time", "week", "number", "email", "url", "search", "tel", and "color"</td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -165,7 +91,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="BSInput.js.html">BSInput.js</a>, <a href="BSInput.js.html#line8">line 8</a>
+        <a href="BSSelect.js.html">BSSelect.js</a>, <a href="BSSelect.js.html#line8">line 8</a>
     </li></ul></dd>
     
 
@@ -292,6 +218,245 @@
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="addOption"><span class="type-signature"></span>addOption<span class="signature">(value, label<span class="signature-attributes">opt</span>, props)</span><span class="type-signature"> &rarr; {<a href="BSSelect.html">BSSelect</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Adds an option to the end of the select
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+|
+
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The value of the option</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+|
+
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The label to use. If no label provided, value will be used instead.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>props</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">An array of properties to be applied to the option (ex. selected, disabled)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BSSelect.js.html">BSSelect.js</a>, <a href="BSSelect.js.html#line57">line 57</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    This select object.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="BSSelect.html">BSSelect</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
 
         
             
@@ -1813,6 +1978,163 @@
 |
 
 <span class="param-type"><a href="BSFormInput.html">BSFormInput</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="setOptions"><span class="type-signature"></span>setOptions<span class="signature">(arr)</span><span class="type-signature"> &rarr; {<a href="BSSelect.html">BSSelect</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Sets all the options in the select. This will remove all current options.<br/>
+<br/>
+This method takes a mixed array as it's only parameter. The elements of the array must be a (string|number|boolean), which will be
+used as the value & label of that option, or an Object with a 'value' property, and optional 'label', and 'props' properties. Any objects
+without a 'value' property will be ignored.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;*></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array of values to use.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BSSelect.js.html">BSSelect.js</a>, <a href="BSSelect.js.html#line90">line 90</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    This select object.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="BSSelect.html">BSSelect</a></span>
 
 
     </dd>

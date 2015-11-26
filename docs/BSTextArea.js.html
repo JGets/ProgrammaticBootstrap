@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: BSInput.js</title>
+    <title>JSDoc: Source: BSTextArea.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: BSInput.js</h1>
+    <h1 class="page-title">Source: BSTextArea.js</h1>
 
     
 
@@ -28,32 +28,23 @@
         <article>
             <pre class="prettyprint source linenums"><code>
 /**
-* Representation of a &amp;lt;input&amp;gt; element
+* Representation of a &amp;lt;textarea&amp;gt; element
 *
 * @extends BSObject
 * @extends BSFormInput
 */
-class BSInput extends BSFormInput{
+class BSTextArea extends BSFormInput{
 	/**
-	* Creates a new BSInput object.
-	* @param {string} [type="text"] - The input type. Acceptable values are: "text", "password", "datetime", 
-	*	"datetime-local", "date", "month", "time", "week", "number", "email", "url", "search", "tel", and "color"
+	* Creates a new BSTextArea object.
 	*/
-	constructor(type){
+	constructor(){
 		super();
-		this._type;
-		
-		const typeRegexp = /(text|password|datetime|datetime-local|date|month|time|week|number|email|url|search|tel|color)/;
-		if(!typeRegexp.test(type)){
-			type = "text";
-		}
-		this._type = type;
 
 		this._$elem.addClass("form-group");
 
-		this._$input = $("&lt;input/>", {
+		this._$input = $("&lt;textarea/>", {
 			id : this._uid+"-input",
-			type : this._type,
+			rows : 3,
 			'class' : "form-control"
 		});
 
@@ -68,9 +59,15 @@ class BSInput extends BSFormInput{
 		);
 	}
 
-	
+	/**
+	* Sets the rows attribute of the textarea
+	* @param {number} [n=3] - The number of rows to show.
+	*/
+	rows(n=3){
+		this._$label.attr("rows", n);
+		return this;
+	}
 }
-
 </code></pre>
         </article>
     </section>
