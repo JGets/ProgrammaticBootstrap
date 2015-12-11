@@ -85,7 +85,7 @@ class BSContentObject extends BSObject{
 	* @return {BSObject} This object
 	*/
 	append(){
-		this._$elem.append(this._$elem, arguments);
+		this._$elem.append.apply(this._$elem, arguments);
 		return this;
 	}
 
@@ -95,7 +95,7 @@ class BSContentObject extends BSObject{
 	* @return {BSObject} This object
 	*/
 	prepend(){
-		this._$elem.prepend(this._$elem, arguments);
+		this._$elem.prepend.apply(this._$elem, arguments);
 		return this;
 	}
 
@@ -777,6 +777,11 @@ class BSTextArea extends BSFormInput{
 class BSForm extends BSObject{
 	constructor(){
 		super();
+
+		this._$elem = $("<form/>", {
+			"class" : "form",
+			role : "form"
+		});
 	}
 
 	append(){

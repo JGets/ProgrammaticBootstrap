@@ -118,7 +118,7 @@ var BSContentObject = (function (_BSObject) {
 	_createClass(BSContentObject, [{
 		key: "append",
 		value: function append() {
-			this._$elem.append(this._$elem, arguments);
+			this._$elem.append.apply(this._$elem, arguments);
 			return this;
 		}
 
@@ -131,7 +131,7 @@ var BSContentObject = (function (_BSObject) {
 	}, {
 		key: "prepend",
 		value: function prepend() {
-			this._$elem.prepend(this._$elem, arguments);
+			this._$elem.prepend.apply(this._$elem, arguments);
 			return this;
 		}
 
@@ -930,7 +930,13 @@ var BSForm = (function (_BSObject3) {
 	function BSForm() {
 		_classCallCheck(this, BSForm);
 
-		return _possibleConstructorReturn(this, Object.getPrototypeOf(BSForm).call(this));
+		var _this9 = _possibleConstructorReturn(this, Object.getPrototypeOf(BSForm).call(this));
+
+		_this9._$elem = $("<form/>", {
+			"class": "form",
+			role: "form"
+		});
+		return _this9;
 	}
 
 	_createClass(BSForm, [{
