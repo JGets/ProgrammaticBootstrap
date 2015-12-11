@@ -30,33 +30,33 @@ var BSObject = (function () {
 
 	/**
  * Appends this BSObject to the given object.
- * @param {(jQuery|BSObject)} obj - The object that this is to be appended to
+ * @param {(jQuery|BSContentObject)} obj - The object that this is to be appended to
  * @throws Will throw an error if obj is not a BSObject or jQuery object.
  */
 
 	_createClass(BSObject, [{
 		key: "appendTo",
 		value: function appendTo(obj) {
-			if (obj instanceof BSObject || obj instanceof jQuery) {
+			if (obj instanceof BSContentObject || obj instanceof jQuery) {
 				obj.append(this._$elem);
 			} else {
-				throw "Error: BSObject can only be appended to other BSObjects or jQuery objects";
+				throw "Error: BSObject can only be appended to BSContentObjects or jQuery objects";
 			}
 		}
 
 		/**
   * Prepends this BSObject to the given object.
-  * @param {(jQuery|BSObject)} obj - The object that this is to be prepended to
+  * @param {(jQuery|BSContentObject)} obj - The object that this is to be prepended to
   * @throws Will throw an error if obj is not a BSObject or jQuery object.
   */
 
 	}, {
 		key: "prependTo",
 		value: function prependTo(obj) {
-			if (obj instanceof BSObject || obj instanceof jQuery) {
+			if (obj instanceof BSContentObject || obj instanceof jQuery) {
 				obj.prepend(this._$elem);
 			} else {
-				throw "Error: BSObject can only be prepended to other BSObjects or jQuery objects";
+				throw "Error: BSObject can only be prepended to BSContentObjects or jQuery objects";
 			}
 		}
 

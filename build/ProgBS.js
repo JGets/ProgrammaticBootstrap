@@ -100,19 +100,19 @@ var BSObject = function() {
     _createClass(BSObject, [ {
         key: "appendTo",
         value: function appendTo(obj) {
-            if (obj instanceof BSObject || obj instanceof jQuery) {
+            if (obj instanceof BSContentObject || obj instanceof jQuery) {
                 obj.append(this._$elem);
             } else {
-                throw "Error: BSObject can only be appended to other BSObjects or jQuery objects";
+                throw "Error: BSObject can only be appended to BSContentObjects or jQuery objects";
             }
         }
     }, {
         key: "prependTo",
         value: function prependTo(obj) {
-            if (obj instanceof BSObject || obj instanceof jQuery) {
+            if (obj instanceof BSContentObject || obj instanceof jQuery) {
                 obj.prepend(this._$elem);
             } else {
-                throw "Error: BSObject can only be prepended to other BSObjects or jQuery objects";
+                throw "Error: BSObject can only be prepended to BSContentObjects or jQuery objects";
             }
         }
     }, {
